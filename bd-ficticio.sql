@@ -59,4 +59,15 @@ SELECT * FROM Produtos;
 -- Mostrar todas as vendas
 SELECT * FROM Vendas;
 
-
+SELECT nome FROM Clientes WHERE status_ativo = 1;
+SELECT nome FROM Produtos WHERE descricao LIKE '%promoção%';
+SELECT nome FROM Clientes WHERE email LIKE '%@empresa.com' AND status_ativo = 1;
+SELECT * FROM Vendas WHERE total > 2000;
+SELECT nome FROM Produtos WHERE estoque < 5;
+SELECT id_cliente, SUM(total) FROM Vendas GROUP BY id_cliente HAVING SUM(total) > 2500;
+SELECT nome FROM Produtos WHERE nome LIKE 'Laptop%';
+SELECT * FROM Vendas WHERE id_cliente IN (SELECT id_cliente FROM Clientes WHERE status_ativo = 1);
+SELECT nome FROM Produtos WHERE preco BETWEEN 1000 AND 2000;
+SELECT nome FROM Clientes WHERE email LIKE '%gmail.com';
+SELECT * FROM Vendas WHERE quantidade > 2;
+SELECT * FROM Produtos WHERE descricao LIKE '%fraude%';
